@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Wireframe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .wireframe-title {
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .wireframe-section {
+            border: 2px solid #ddd;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            color: #666;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .header {
+            background-color: #e8e8e8;
+            min-height: 80px;
+            border-bottom: 3px solid #333;
+        }
+
+        .nav {
+            background-color: #d0d0d0;
+            min-height: 50px;
+            border-bottom: 2px solid #666;
+        }
+
+        .hero {
+            background-color: #a5d8ff;
+            min-height: 300px;
+            border-bottom: 2px solid #666;
+        }
+
+        .projects {
+            background-color: #b2f2bb;
+            min-height: 350px;
+            border-bottom: 2px solid #666;
+        }
+
+        .footer {
+            background-color: #ffc9c9;
+            min-height: 100px;
+        }
+
+        .legend {
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-top: 2px solid #ddd;
+        }
+
+        .legend-item {
+            margin: 8px 0;
+            padding: 8px;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wireframe-title">
+            <h1>Portfolio Website Wireframe</h1>
+            <p>index.html Structure</p>
+            <nav style="margin-top: 15px;">
+                <a href="wireframe.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">📄 Home</a>
+                <a href="wireframe-about.html" style="color: white; margin: 0 15px; text-decoration: none;">📄 About</a>
+                <a href="wireframe-project.html" style="color: white; margin: 0 15px; text-decoration: none;">📄 Project</a>
+            </nav>
+        </div>
+
+        <div class="wireframe-section header">
+            HEADER / LOGO
+        </div>
+
+        <div class="wireframe-section nav">
+            NAVIGATION (Home | About | Projects | Contact)
+        </div>
+
+        <div class="wireframe-section hero">
+            HERO SECTION<br>
+            <small>(Profile image, welcome message, or intro)</small>
+        </div>
+
+        <div class="wireframe-section projects">
+            FEATURED PROJECTS<br>
+            <small>[Project 1] [Project 2] [Project 3] [Project 4]</small>
+        </div>
+
+        <div class="wireframe-section footer">
+            FOOTER<br>
+            <small>(Contact info, social links, copyright)</small>
+        </div>
+
+        <div class="legend">
+            <h3>Color Legend</h3>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #e8e8e8;"></span>
+                <strong>Header</strong> - Logo, site name
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #d0d0d0;"></span>
+                <strong>Navigation</strong> - Menu links
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #a5d8ff;"></span>
+                <strong>Hero</strong> - Main welcome/intro area
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #b2f2bb;"></span>
+                <strong>Projects</strong> - Featured work showcase
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background-color: #ffc9c9;"></span>
+                <strong>Footer</strong> - Contact info & links
+            </div>
+        </div>
+    </div>
+</body>
+</html>
