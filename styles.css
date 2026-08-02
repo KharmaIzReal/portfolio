@@ -1,1 +1,155 @@
+/* ==========================================================================
+   1. STYLING: Variables, Reset & Google Fonts
+   ========================================================================== */
 
+:root {
+  /* Color Palette */
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border: #e5e7eb;
+
+  /* 8px Spacing System */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Google Font Pairings */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: var(--space-16);
+}
+
+/* Selector Type 1: TYPE SELECTOR */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-16);
+}
+
+p {
+  margin-bottom: var(--space-16);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   2. SELECTORS & LAYOUT (Flexbox & Grid)
+   ========================================================================== */
+
+/* Selector Type 2: ID SELECTOR */
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-32);
+}
+
+#main-footer {
+  text-align: center;
+  padding: var(--space-32) 0;
+  margin-top: var(--space-48);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* Selector Type 3: CLASS SELECTORS */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--space-16);
+}
+
+.hero-section {
+  padding: var(--space-32) 0;
+  margin-bottom: var(--space-32);
+}
+
+/* Flexbox / Grid Multi-column section */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column by default for mobile */
+  gap: var(--space-24);
+  margin-top: var(--space-24);
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border);
+  border-radius: var(--space-8);
+  padding: var(--space-24);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: var(--space-8) var(--space-16);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3. RESPONSIVENESS (@media queries for 320px, 768px, 1200px)
+   ========================================================================== */
+
+/* Tablet Breakpoint (768px and up) */
+@media (min-width: 768px) {
+  body {
+    padding: var(--space-32);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
+  .nav-list {
+    gap: var(--space-24);
+  }
+}
+
+/* Desktop Breakpoint (1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-48) 0;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  }
+}
