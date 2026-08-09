@@ -15,65 +15,59 @@
 </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Contact | Personal Portfolio</title>
+    <title>About &amp; Contact | Personal Portfolio</title>
+    <meta name="description" content="Learn more about me and contact me through the form on this page.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Shared Header and Navigation -->
-    <header>
-        <span class="logo"><strong>My Portfolio</strong></span>
-        <nav>
-            <ul>
+    <header class="site-header">
+        <a class="logo" href="index.html">My Portfolio</a>
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="project.html">Projects</a></li>
-                <li><a href="about.html"><strong>About & Contact</strong></a></li>
+                <li><a href="about.html" aria-current="page">About &amp; Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main>
-        <!-- Biography Section -->
-        <section id="about-me">
-            <h1>About Me</h1>
-            <h2>My Background & Journey</h2>
+    <main id="main-content">
+        <section class="content-section" id="about-me" aria-labelledby="about-title">
+            <p class="eyebrow">About me</p>
+            <h1 id="about-title">About Me</h1>
+            <h2>My Background &amp; Journey</h2>
             <p>Placeholder biography paragraph. Mention your passion for coding, design philosophy, and what drives your curiosity in technology.</p>
             <p>Placeholder paragraph for technical skills, certifications, hobbies, or education background.</p>
         </section>
 
-        <hr>
+        <section class="content-section" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Get In Touch</h2>
+            <p>Have a question or want to work together? Drop a message below.</p>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Have a question or want to work together? Drop a message below!</p>
-            
-            <!-- Structural Form Placeholder -->
-            <form action="#" method="POST">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
-                </div>
-                <br>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Your Email">
-                </div>
-                <br>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
-                </div>
-                <br>
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="contact-card">
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button class="button-primary" type="submit">Send Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <!-- Shared Footer -->
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
-
 </body>
 </html>

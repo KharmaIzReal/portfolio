@@ -16,57 +16,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Personal Portfolio</title>
+    <meta name="description" content="Browse featured projects from my portfolio.">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Shared Header and Navigation -->
-    <header>
-        <span class="logo"><strong>My Portfolio</strong></span>
-        <nav>
-            <ul>
+    <header class="site-header">
+        <a class="logo" href="index.html">My Portfolio</a>
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="project.html"><strong>Projects</strong></a></li>
-                <li><a href="about.html">About & Contact</a></li>
+                <li><a href="project.html" aria-current="page">Projects</a></li>
+                <li><a href="about.html">About &amp; Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <main>
-        <section id="projects-gallery">
-            <h1>My Projects & Work</h1>
+    <main id="main-content">
+        <section class="content-section" id="projects-gallery" aria-labelledby="projects-title">
+            <p class="eyebrow">Selected work</p>
+            <h1 id="projects-title">My Projects &amp; Work</h1>
             <p>Explore some of the recent applications and web designs I have developed.</p>
 
-            <!-- Project Grid Container -->
             <div class="grid">
                 <article class="project-item">
                     <h2>E-Commerce Platform</h2>
                     <h3>Front-End Development</h3>
                     <p>Placeholder text describing the full features, goals, and outcomes of the e-commerce build.</p>
-                    <a href="#">View Live Site</a> | <a href="#">View Repository</a>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
                 </article>
 
                 <article class="project-item">
                     <h2>Interactive Dashboard</h2>
                     <h3>Data Visualization</h3>
                     <p>Placeholder text describing the full features, goals, and outcomes of the dashboard application.</p>
-                    <a href="#">View Live Site</a> | <a href="#">View Repository</a>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
                 </article>
 
                 <article class="project-item">
                     <h2>Task Management App</h2>
                     <h3>Full-Stack Architecture</h3>
                     <p>Placeholder text describing the full features, goals, and outcomes of the task tracking application.</p>
-                    <a href="#">View Live Site</a> | <a href="#">View Repository</a>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
                 </article>
             </div>
         </section>
     </main>
 
-    <!-- Shared Footer -->
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
