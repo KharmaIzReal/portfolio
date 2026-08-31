@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
 
-  <!-- 1. Google Fonts Import (Inter & Playfair Display) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-  <!-- 2. Your CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About &amp; Contact | Personal Portfolio</title>
     <meta name="description" content="Learn more about me and contact me through the form on this page.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
         <a class="logo" href="index.html">My Portfolio</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">
+            <span aria-hidden="true">☰</span> Menu
+        </button>
         <nav aria-label="Main navigation">
-            <ul class="nav-list">
+            <ul class="nav-list" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="project.html">Projects</a></li>
                 <li><a href="about.html" aria-current="page">About &amp; Contact</a></li>
@@ -38,7 +39,8 @@
             <p class="eyebrow">About me</p>
             <h1 id="about-title">About Me</h1>
             <h2>My Background &amp; Journey</h2>
-            <p>Placeholder biography paragraph. Mention your passion for coding, design philosophy, and what drives your curiosity in technology.</p>
+            <p>Placeholder biography paragraph. Mention your passion for coding, design philosophy, and what drives your
+                curiosity in technology.</p>
             <p>Placeholder paragraph for technical skills, certifications, hobbies, or education background.</p>
         </section>
 
@@ -47,20 +49,25 @@
             <p>Have a question or want to work together? Drop a message below.</p>
 
             <div class="contact-card">
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" id="contactForm" action="#" method="post" novalidate>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your Name">
+                        <span class="error-msg" id="nameError" role="alert"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required placeholder="Your Email">
+                        <span class="error-msg" id="emailError" role="alert"></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Type your message here..."></textarea>
+                        <span class="error-msg" id="messageError" role="alert"></span>
                     </div>
                     <button class="button-primary" type="submit">Send Message</button>
+                    <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -69,5 +76,8 @@
     <footer class="site-footer">
         <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="interactions.js" defer></script>
 </body>
+
 </html>
