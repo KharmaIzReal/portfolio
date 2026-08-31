@@ -5,6 +5,7 @@
   --text-muted: #4b5563;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
+  --error: #c0392b;
   --border: #e5e7eb;
   --space-8: 8px;
   --space-16: 16px;
@@ -95,6 +96,7 @@ textarea:focus-visible {
   margin-bottom: var(--space-32);
   flex-wrap: wrap;
   gap: 1rem;
+  position: relative;
 }
 
 #main-footer,
@@ -113,13 +115,35 @@ textarea:focus-visible {
   text-decoration: none;
 }
 
+/* ===== Nav toggle (hamburger) ===== */
+.nav-toggle {
+  display: inline-block;
+  background: var(--surface-color);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  background: var(--bg-color);
+}
+
 .nav-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
+  flex-direction: column;
   list-style: none;
   gap: var(--space-16);
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+.nav-list.open {
+  display: flex;
 }
 
 .nav-list a {
@@ -191,6 +215,9 @@ main {
   text-decoration: none;
   font-weight: 700;
   margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 .btn-primary:hover,
@@ -223,6 +250,30 @@ textarea {
   font: inherit;
 }
 
+/* ===== Form validation states ===== */
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+#formStatus {
+  font-weight: 600;
+}
+
+/* ===== Fun fact box ===== */
+#funFact {
+  padding: 1rem;
+  background: var(--bg-color);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
 @media (min-width: 768px) {
   body {
     padding: var(--space-32);
@@ -233,8 +284,16 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .nav-list {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-list,
+  .nav-list.open {
+    display: flex;
+    flex-direction: row;
     gap: var(--space-24);
+    width: auto;
   }
 }
 
