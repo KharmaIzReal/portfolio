@@ -1,327 +1,83 @@
-:root {
-  --bg-color: #f8f9fa;
-  --surface-color: #ffffff;
-  --text-main: #1f2937;
-  --text-muted: #4b5563;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --error: #c0392b;
-  --border: #e5e7eb;
-  --space-8: 8px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
-  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-}
+<!DOCTYPE html>
+<html lang="en">
 
-* {
-  box-sizing: border-box;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Personal Portfolio</title>
+    <meta name="description" content="Browse featured projects from my portfolio.">
 
-html {
-  scroll-behavior: smooth;
-}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
 
-body {
-  margin: 0;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  padding: var(--space-16);
-}
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-img {
-  max-width: 100%;
-  display: block;
-}
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: var(--space-16);
-}
+    <header class="site-header">
+        <a class="logo" href="index.html">My Portfolio</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">
+            <span aria-hidden="true">☰</span> Menu
+        </button>
+        <nav aria-label="Main navigation">
+            <ul class="nav-list" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project.html" aria-current="page">Projects</a></li>
+                <li><a href="about.html">About &amp; Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-p {
-  margin-bottom: var(--space-16);
-}
+    <main id="main-content">
+        <section class="content-section" id="projects-gallery" aria-labelledby="projects-title">
+            <p class="eyebrow">Selected work</p>
+            <h1 id="projects-title">My Projects &amp; Work</h1>
+            <p>Explore some of the recent applications and web designs I have developed.</p>
 
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
+            <div class="grid">
+                <article class="project-item">
+                    <h2>E-Commerce Platform</h2>
+                    <h3>Front-End Development</h3>
+                    <p>Placeholder text describing the full features, goals, and outcomes of the e-commerce build.</p>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
+                </article>
 
-a:hover {
-  text-decoration: underline;
-}
+                <article class="project-item">
+                    <h2>Interactive Dashboard</h2>
+                    <h3>Data Visualization</h3>
+                    <p>Placeholder text describing the full features, goals, and outcomes of the dashboard application.
+                    </p>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
+                </article>
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #f59e0b;
-  outline-offset: 3px;
-}
+                <article class="project-item">
+                    <h2>Task Management App</h2>
+                    <h3>Full-Stack Architecture</h3>
+                    <p>Placeholder text describing the full features, goals, and outcomes of the task tracking
+                        application.</p>
+                    <a href="#">View Live Site</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#">View Repository</a>
+                </article>
+            </div>
+        </section>
+    </main>
 
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 1rem;
-  background: var(--text-main);
-  color: #fff;
-  padding: 0.75rem 1rem;
-  z-index: 1000;
-  text-decoration: none;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
+    <footer class="site-footer">
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </footer>
 
-.skip-link:focus {
-  top: 0;
-}
+    <script src="interactions.js" defer></script>
+</body>
 
-#main-header,
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-16) 0;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: var(--space-32);
-  flex-wrap: wrap;
-  gap: 1rem;
-  position: relative;
-}
-
-#main-footer,
-.site-footer {
-  text-align: center;
-  padding: var(--space-32) 0;
-  margin-top: var(--space-48);
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
-}
-
-.logo {
-  color: var(--text-main);
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-/* ===== Nav toggle (hamburger) ===== */
-.nav-toggle {
-  display: inline-block;
-  background: var(--surface-color);
-  border: 1px solid var(--border);
-  color: var(--text-main);
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 0.9rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.nav-toggle:hover {
-  background: var(--bg-color);
-}
-
-.nav-list {
-  display: none;
-  flex-direction: column;
-  list-style: none;
-  gap: var(--space-16);
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.nav-list.open {
-  display: flex;
-}
-
-.nav-list a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nav-list a[aria-current="page"] {
-  color: var(--primary-hover);
-  border-bottom: 2px solid var(--primary-hover);
-}
-
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
-
-.hero,
-.content-section,
-.hero-section {
-  background: var(--surface-color);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow);
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--primary-hover);
-  margin-bottom: 0.5rem;
-}
-
-.section-heading {
-  margin-bottom: 1rem;
-}
-
-.project-grid,
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-24);
-  margin-top: var(--space-24);
-}
-
-.card,
-.project-card,
-.project-item,
-.contact-card {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-}
-
-.btn-primary,
-.button-primary {
-  display: inline-block;
-  background-color: var(--primary);
-  color: #ffffff;
-  padding: 0.8rem 1.15rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 1rem;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-}
-
-.btn-primary:hover,
-.button-primary:hover {
-  background-color: var(--primary-hover);
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.contact-form {
-  display: grid;
-  gap: 1rem;
-}
-
-.form-group {
-  display: grid;
-  gap: 0.35rem;
-}
-
-label {
-  font-weight: 600;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 0.8rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  font: inherit;
-}
-
-/* ===== Form validation states ===== */
-input[aria-invalid="true"],
-textarea[aria-invalid="true"] {
-  border-color: var(--error);
-}
-
-.error-msg {
-  color: var(--error);
-  font-size: 0.85rem;
-  min-height: 1.2em;
-}
-
-#formStatus {
-  font-weight: 600;
-}
-
-/* ===== Fun fact box ===== */
-#funFact {
-  padding: 1rem;
-  background: var(--bg-color);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding: var(--space-32);
-  }
-
-  .project-grid,
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav-list,
-  .nav-list.open {
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-24);
-    width: auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--space-48) 0;
-  }
-
-  .project-grid,
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .site-header {
-    padding: 1rem;
-  }
-
-  main {
-    padding: 1rem 1rem 2.5rem;
-  }
-
-  .hero,
-  .content-section,
-  .hero-section {
-    padding: 1.25rem;
-  }
-}
+</html>
