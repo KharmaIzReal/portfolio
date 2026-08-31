@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
 
-  <!-- 1. Google Fonts Import (Inter & Playfair Display) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-  <!-- 2. Your CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Personal Portfolio</title>
     <meta name="description" content="Browse featured projects from my portfolio.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
         <a class="logo" href="index.html">My Portfolio</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navMenu">
+            <span aria-hidden="true">☰</span> Menu
+        </button>
         <nav aria-label="Main navigation">
-            <ul class="nav-list">
+            <ul class="nav-list" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="project.html" aria-current="page">Projects</a></li>
                 <li><a href="about.html">About &amp; Contact</a></li>
@@ -52,7 +53,8 @@
                 <article class="project-item">
                     <h2>Interactive Dashboard</h2>
                     <h3>Data Visualization</h3>
-                    <p>Placeholder text describing the full features, goals, and outcomes of the dashboard application.</p>
+                    <p>Placeholder text describing the full features, goals, and outcomes of the dashboard application.
+                    </p>
                     <a href="#">View Live Site</a>
                     <span aria-hidden="true"> | </span>
                     <a href="#">View Repository</a>
@@ -61,7 +63,8 @@
                 <article class="project-item">
                     <h2>Task Management App</h2>
                     <h3>Full-Stack Architecture</h3>
-                    <p>Placeholder text describing the full features, goals, and outcomes of the task tracking application.</p>
+                    <p>Placeholder text describing the full features, goals, and outcomes of the task tracking
+                        application.</p>
                     <a href="#">View Live Site</a>
                     <span aria-hidden="true"> | </span>
                     <a href="#">View Repository</a>
@@ -73,5 +76,8 @@
     <footer class="site-footer">
         <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
+
+    <script src="interactions.js" defer></script>
 </body>
+
 </html>
