@@ -205,8 +205,8 @@ main {
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 0.75rem;
   margin: var(--space-16) auto;
