@@ -204,6 +204,15 @@ main {
   margin-bottom: 0.5rem;
 }
 
+.profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin: var(--space-16) auto;
+  display: block;
+}
+
 .hero-photo {
   width: 160px;
   height: 160px;
